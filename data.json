@@ -1,0 +1,20 @@
+{
+    "webinar":[{
+        "id":1,
+        "name":"Youtube",
+        "text":"DFGHJKL",
+        "url":"https://www.youtube.com/"
+    },
+{
+    "id":2,
+    "name":"Gmail",
+    "text":"DFGHJKL",
+    "url":"https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+},{
+    "id":3,
+    "name":"Jitsi",
+    "text":"DFGHJKL",
+    "url":"https://meet.jit.si/slots"
+}
+]
+}

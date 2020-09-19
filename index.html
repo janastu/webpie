@@ -42,7 +42,8 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -83,6 +84,7 @@
         </div>
         <div>
           <h3 class="mt-4">List of webinars</h3>
+          <ul id="screen"></ul>
         </div>
       </div>
     </div>
@@ -97,12 +99,26 @@
 
   <!-- Menu Toggle Script -->
   <script>
-    $("#menu-toggle").click(function(e) {
+    $("#menu-toggle").click(function (e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
   </script>
-
+  <script>
+    $(window).on("load", function () {
+      $.getJSON("data.json", function (obj) {
+        $.each(obj.webinar, function () {
+          $("#screen").append($("<li/>" )
+         .append($("<a/>",{
+          text:this.name,
+          href: this.url,
+          target:"_blank"
+         })))
+          
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
